@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_results.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/resultsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Results"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/correctAnswersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correct Answers: 0"
+        android:layout_below="@id/resultsTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/incorrectAnswersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incorrect Answers: 0"
+        android:layout_below="@id/correctAnswersTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_below="@id/incorrectAnswersTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>
