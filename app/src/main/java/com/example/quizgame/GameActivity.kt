@@ -1,5 +1,6 @@
 package com.example.quizgame
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -9,6 +10,7 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+@Suppress("DEPRECATION")
 class GameActivity : AppCompatActivity() {
 
     private lateinit var imageView: ImageView
@@ -41,6 +43,7 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("DiscouragedApi")
     private fun displayQuiz() {
         // Check if there are more quizzes to display
         if (currentQuizIndex < quizzes.size) {
@@ -48,7 +51,15 @@ class GameActivity : AppCompatActivity() {
             val currentQuiz = quizzes[currentQuizIndex]
 
             // Update UI components with quiz information
-            imageView.setImageResource(resources.getIdentifier(currentQuiz.pictureName, "drawable", packageName))
+            val imageResId = resources.getIdentifier(currentQuiz.pictureName, "drawable", packageName)
+            if (imageResId != 0) {
+                // Set the image resource if it exists
+                imageView.setImageResource(imageResId)
+            } else {
+                // Set a default image or handle the case where the resource is not found
+                imageView.setImageResource(R.drawable.standart)
+            }
+
             questionTextView.text = currentQuiz.question
 
             // Clear existing radio buttons
@@ -65,6 +76,7 @@ class GameActivity : AppCompatActivity() {
             finish()
         }
     }
+
 
     private fun checkAnswer() {
         // Get the selected radio button index

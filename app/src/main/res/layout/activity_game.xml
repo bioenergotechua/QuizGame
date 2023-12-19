@@ -9,11 +9,13 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="400dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/standart" />
+        android:contentDescription="Image" />
 
     <TextView
         android:id="@+id/questionTextView"
